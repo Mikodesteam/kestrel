@@ -54,9 +54,17 @@ Users connect their own exchange accounts (Binance, OKX, Bybit, Bitget) with tra
 - **Algo orders: TWAP and scaled**: Split large orders over time or price.
 - **Signals: TradingView webhook per bot with secret, Telegram channel signal parser**: Execute TradingView alerts and Telegram signal posts automatically.
 
+## How it works
+
+A technical case study of the architecture, one end-to-end flow, the key engineering decisions and how you would build something like this: **[docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md)**.
+
 ## A look at the code
 
-**Position sizing**: [`snippets/position-sizing.ts`](snippets/position-sizing.ts). Converts an order ticket into an exact amount, including risk-based sizing where the stop-loss distance decides the position. Decimal math and step flooring keep it exchange-safe.
+Real excerpts from the source, shown for illustration:
+
+- **Position sizing** ([`snippets/position-sizing.ts`](snippets/position-sizing.ts)): Converts an order ticket into an exact amount, including risk-based sizing where the stop-loss distance decides the position. Decimal math and step flooring keep it exchange-safe.
+- **API key permission check** ([`snippets/key-permissions.ts`](snippets/key-permissions.ts)): Reads what an exchange key may do and refuses keys that can withdraw or transfer. Anything unexpected in the exchange reply fails closed.
+- **Signal confidence scoring** ([`snippets/signal-confidence.ts`](snippets/signal-confidence.ts)): A signal read from free text gets a confidence score. Missing exits, recap posts and numbers that contradict the side all lower it, and the bot acts only above a threshold.
 
 Not included: Hosting, domain, TLS certificate and a fixed-IP server; Exchange accounts, API keys and any exchange trading fees or funding payments; Exchange broker/affiliate program approval; Apple Developer, Google Play and Firebase accounts; Firebase project for push notifications.
 
