@@ -8,6 +8,8 @@
   <b>Crypto trading bots: a Flutter app with a Node.js server.</b>
 </p>
 
+<p align="center"><sub>Crypto trading bot source code · grid & DCA bots · Binance, OKX, Bybit, Bitget · Flutter + Node.js</sub></p>
+
 <p align="center">
   <a href="https://kestrel-demo.mikodes.com/"><b>▶ Live demo</b></a> ·
   <a href="https://store.mikodes.com/p/kestrel/"><b>Get the full source code</b></a>
@@ -67,6 +69,20 @@ Real excerpts from the source, shown for illustration:
 - **Signal confidence scoring** ([`snippets/signal-confidence.ts`](snippets/signal-confidence.ts)): A signal read from free text gets a confidence score. Missing exits, recap posts and numbers that contradict the side all lower it, and the bot acts only above a threshold.
 
 Not included: Hosting, domain, TLS certificate and a fixed-IP server; Exchange accounts, API keys and any exchange trading fees or funding payments; Exchange broker/affiliate program approval; Apple Developer, Google Play and Firebase accounts; Firebase project for push notifications.
+
+## FAQ
+
+**Is this the full source code?**  
+No. This repository is a showcase with screenshots, a technical case study and real code excerpts. The complete Kestrel source code is sold at [store.mikodes.com/p/kestrel](https://store.mikodes.com/p/kestrel/).
+
+**What is Kestrel built with?**  
+Flutter, Node.js.
+
+**Can I try it before buying?**  
+Yes, open the [live demo](https://kestrel-demo.mikodes.com/).
+
+**Do I get help with the installation?**  
+Free setup help is included with the store purchase; questions go to [mikodes.com/support](https://mikodes.com/support).
 
 ## Get the full source code
 
